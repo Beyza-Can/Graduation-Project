@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage Tahmini</title>
+</head>
+<body>
+    <h1>Percentage Tahmini</h1>
+    <form method="post">
+        {% for col in feature_columns %}
+            <label for="{{ col }}">{{ col }}:</label>
+            <input type="number" name="{{ col }}" id="{{ col }}" required><br>
+        {% endfor %}
+        <button type="submit">Tahmin Et</button>
+    </form>
+    {% if result %}
+        <h2>Tahmin Edilen Percentage Değeri: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>

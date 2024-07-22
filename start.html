@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoş Geldiniz</title>
+    <style>
+        /* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Form stil ayarları */
+form {
+    margin-top: 20px;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form button[type="submit"] {
+    width: 100%;
+}
+
+/* Butonlar içindeki iconlar için ayarlar */
+button i.fa {
+    margin-right: 5px;
+}
+
+    </style>
+    </head>
+</head>
+<body>
+    <h1>Kanser Tahmin Sitesine Hoş Geldiniz</h1>
+    <p>Kanserde erken teşhis, hastalığın seyri ve tedavi başarısı açısından hayati öneme sahiptir. 
+        <br>Erken teşhis, kanserin henüz vücuda yayılmadan ve daha yönetilebilir bir evrede yakalanmasını sağlar. 
+        Bu durum, tedavi seçeneklerinin daha geniş olmasına ve 
+        başarı oranının yüksek olmasına olanak tanır. 
+        Örneğin, birçok kanser türünde erken evrede tespit edilen 
+        vakaların tedaviye yanıtı daha iyidir ve bu hastalar uzun 
+        vadede daha yüksek bir yaşam kalitesine sahip olabilirler. 
+        <br>Ayrıca, erken teşhis sayesinde tedavi maliyetleri de düşer, 
+        çünkü ileri evre kanser tedavileri genellikle daha karmaşık ve pahalıdır.
+        Bu nedenle, düzenli sağlık kontrolleri ve tarama programlarına katılım, 
+        kanserle mücadelede kritik bir rol oynar ve hayat kurtarıcı olabilir.</p>
+    <p>Kanser riski ve percentage tahmini yapmak için aşağıdaki butona tıklayın.</p>
+    <form action="{{ url_for('predict') }}" method="get">
+        <button type="submit">Tahmin Formuna Git</button>
+    </form>
+    <p>Kanser riski tahminini resimle yapmak için aşağıdaki butona tıklayın.</p>
+    <form action="{{ url_for('upload_image') }}" method="get">
+        <button type="submit">Resim Yükleme Formuna Git</button>
+    </form>
+</body>
+</html>
